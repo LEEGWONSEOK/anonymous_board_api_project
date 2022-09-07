@@ -1,6 +1,4 @@
 const Post = require('../models/post');
-const sequelize = require("sequelize");
-const { Op } = sequelize;
 const crypto = require('crypto');
 
 module.exports.createPost = async (req, res, next) => {
@@ -27,13 +25,14 @@ module.exports.createPost = async (req, res, next) => {
 
 
 module.exports.readAllPost = async (req, res, next) => {
+  // Pagination
   const pageNum = req.query.page;
   let offset = 0;
   if (pageNum > 1) {
     offset = 20 * (pageNum - 1);
     console.log(offset);  
   }
-  
+
   await Post.findAndCountAll({
     order: [['createAt', 'DESC']],
     offset: offset,
@@ -55,6 +54,8 @@ module.exports.readPost = async (req, res, next) => {
 module.exports.updatePost = async (req, res, next) => {
   const { id } = req.params;
   const body = req.body;
+  
+  // Password 검사
   const result = await Post.findOne({
     where: { id }
   })
@@ -65,7 +66,8 @@ module.exports.updatePost = async (req, res, next) => {
   if (dbPassword !== hashPassword) {
     return res.status(403).send('비밀번호가 틀렸습니다')
   }
-    await Post.update({
+    
+  await Post.update({
       title: body.title,
       content: body.content,
     }, {
@@ -78,6 +80,8 @@ module.exports.updatePost = async (req, res, next) => {
 module.exports.deletePost = async (req, res, next) => {
   const { id } = req.params;
   const body = req.body;
+
+  // Password 검사
   const result = await Post.findOne({
     where: { id }
   })
@@ -88,6 +92,7 @@ module.exports.deletePost = async (req, res, next) => {
   if (dbPassword !== hashPassword) {
     return res.status(403).send('비밀번호가 틀렸습니다')
   }
+  
   await Post.destroy({
     where: { id }
   })
