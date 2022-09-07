@@ -1,9 +1,8 @@
-require("dotenv").config();
-
+const dotenv = require("dotenv");
 const env = process.env;
-
 const PORT = env.SERVER_PORT || 8080;
 
+dotenv.config();
 const development = {
   username: env.MYSQL_USERNAME,
   password: env.MYSQL_PASSWORD,
