@@ -10,7 +10,7 @@ const router = express.Router({ mergeParams: true });
 router.post('/', postCtrl.createPost);      // Post Create 
 router.get('/', postCtrl.readAllPost);      // Posts Read
 router.get('/:id', postCtrl.readPost);      // Post Read
-//router.patch('/:id', postCtrl.updatePost);  // Post Update
-//router.delete('/:id', postCtrl.deletePost); // Post Delete
+router.patch('/:id', postCtrl.updatePost);  // Post Update
+router.delete('/:id', postCtrl.deletePost); // Post Delete
 
 module.exports = router;

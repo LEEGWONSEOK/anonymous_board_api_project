@@ -32,6 +32,11 @@ module.exports = class Post extends Sequelize.Model {
         allowNull: false,
         comment: '익명 게시판 비밀번호',
       },
+      salt: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        comment: 'salt',
+      },
       createAt: {
         type: Sequelize.DATE,
         allowNull: false,
