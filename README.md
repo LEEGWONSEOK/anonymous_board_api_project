@@ -21,6 +21,7 @@
 #### 로그인 / 로그아웃 없이 제공하는 익명게시판
 
 ![README1](./readme/createPost.png)
+
 ![README1](./readme/createPost2.png)
 
 - 다음과 같이 `title`, `content`, `password`를 입력하고 게시글을 생성합니다.
@@ -35,6 +36,7 @@
 #### 비밀번호에 규칙을 생성하여 유효성 검사하기
 
 ![README1](./readme/creatPost_validate.png)
+
 ![README1](./readme/creatPost_validate2.png)
 
 - 비밀번호 규칙 : '최소 6자리 이상' 그리고 '최소 숫자 1개 이상' 
@@ -46,6 +48,7 @@
 - `password`가 일치하지 않으면 게시글을 수정할 수 없습니다.
 
 ![README1](./readme/updatePost.png)
+
 ![README1](./readme/updatePost2.png)
 
 - `password`가 일치하면 게시글을 수정할 수 있습니다.
@@ -57,10 +60,8 @@
 #### Pagination을 활용하여 효율적으로 불러오기
 
 ![README1](./readme/readAllPost_pagination.png)
+
 ![README1](./readme/readAllPost_pagination2.png)
 
 - 게시글들을 `최신순`으로 나열했습니다.
 - 20개씩 나누어 `페이지네이션` 으로 구성했습니다.
-
-
-#### ERD
