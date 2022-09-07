@@ -38,6 +38,8 @@
 
 ![readme/creatPost_validate](./readme/creatPost_validate.png)
 
+![readme/creatPost_validate2](./readme/createPost_validate2.png)
+
 
 - 비밀번호 규칙 : '최소 6자리 이상' 그리고 '최소 숫자 1개 이상' 
 - 규칙에 위배되면 다음과 같이 메세지를 보냅니다.
